@@ -3,10 +3,12 @@ package com.batis.app.dao.impl;
 import com.batis.app.dao.UserDAO;
 import com.batis.app.model.User;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by moslpc on 2017/1/11.
  */
+@Service
 public class UserDAOImpl extends JdbcDaoSupport implements UserDAO {
 
     @Override
