@@ -52,6 +52,12 @@ public class AppController {
   @RequestMapping("/saveUser")
   @ResponseBody
   public Map<String,Object> saveUser() {
+
+    try {
+      TimeUnit.SECONDS.sleep(5);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     User user = new User();
     user.setId(ThreadLocalRandom.current().nextInt(1, 1000 + 1));
     user.setUserName(UUID.randomUUID().toString());
