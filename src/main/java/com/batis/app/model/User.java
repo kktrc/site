@@ -4,6 +4,7 @@ package com.batis.app.model;
  * Created by moslpc on 2017/1/11.
  */
 public class User {
+
     private int id;
     private String userName;
     private String password;

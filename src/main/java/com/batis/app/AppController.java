@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -50,9 +53,9 @@ public class AppController {
   @ResponseBody
   public Map<String,Object> saveUser() {
     User user = new User();
-    user.setId(100);
-    user.setUserName("mosl");
-    user.setPassword("123456");
+    user.setId(ThreadLocalRandom.current().nextInt(1, 1000 + 1));
+    user.setUserName(UUID.randomUUID().toString());
+    user.setPassword(UUID.randomUUID().toString());
     userDAO.save(user);
     return new HashMap<>();
   }
